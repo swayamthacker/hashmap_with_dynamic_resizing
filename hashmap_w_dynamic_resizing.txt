@@ -105,8 +105,6 @@ class HashMap
             Hashnode* entry = table[hash];
             while(entry!=NULL && entry->getkey()!=key)
             {
-                cout<<"The value is "<<entry->getvalue()<<endl;
-                //the above statement is not needed
                 entry = entry->getnext();
             }
             if(entry->getkey()==key)
@@ -151,8 +149,7 @@ class HashMap
                 delete entry;
                 currentsize--;
             }
-            else //entry is NULL. This will never get implemented as the first if in the function will
-            //take care of this case.
+            else  
             {
                 cout<<"There was no value to remove"<<endl;
                 return;
