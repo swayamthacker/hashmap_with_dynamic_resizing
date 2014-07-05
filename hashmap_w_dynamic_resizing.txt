@@ -47,8 +47,8 @@ class HashMap
     HashMap()
     {
         threshold = 0.75;
-        maxsize = threshold*default_size;
         size = default_size;
+        maxsize = threshold*size;
         currentsize = 0;
         table = new Hashnode*[size];
         for(int i = 0;i<size;i++)
@@ -130,7 +130,7 @@ class HashMap
         {
             Hashnode* entry = table[hash];
             Hashnode* preventry = 0;
-            while(entry!=NULL && entry->getkey()!=key)
+            while(entry->getnext() !=NULL && entry->getkey()!=key)
             {
                 preventry = entry;
                 entry = entry->getnext();
